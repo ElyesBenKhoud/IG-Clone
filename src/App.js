@@ -150,7 +150,7 @@ function App() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <Button onClick={handleRegister}>Register</Button>
+            <Button onClick={handleRegister}>Sign Up</Button>
           </form>
         </div>
       </Modal>
@@ -213,9 +213,7 @@ function App() {
           <ImageUpload username={user.displayName} />
         </div>
       ) : (
-        <center>
-          <h3>Login to upload</h3>
-        </center>
+        ""
       )}
     </div>
   );

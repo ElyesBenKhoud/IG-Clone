@@ -69,7 +69,7 @@ const ImageUpload = ({ username }) => {
       <div>
         <input type="file" onChange={handleChange} />
         <Button className="imageupload__button" onClick={handleUpload}>
-          Upload
+          Upload here
         </Button>
       </div>
 

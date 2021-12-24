@@ -8,7 +8,7 @@
 
 .post__image {
   width: 100%;
-  object-fit: contain;
+  object-fit: fit;
 }
 
 .post__avatar {
@@ -51,7 +51,7 @@
 .post__button {
   border: none;
   border-top: 1px solid lightgray;
-  color: #6082a3;
+  color: #36a370;
   background-color: transparent;
   flex: 0;
 }
