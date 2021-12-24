@@ -5,7 +5,7 @@ import ImageUpload from "./ImageUpload";
 import { db, auth } from "./firebase";
 import { Button, Avatar, makeStyles, Modal, Input } from "@material-ui/core";
 import FlipMove from "react-flip-move";
-import InstagramEmbed from "react-instagram-embed";
+import Popup from "reactjs-popup";
 
 function getModalStyle() {
   const top = 50;
@@ -155,6 +155,22 @@ function App() {
         </div>
       </Modal>
       <div className="app__header">
+        <Popup
+          trigger={<Button className="bn632-hover bn21">Add Post</Button>}
+          position="top left"
+        >
+          {() => (
+            <div>
+              {user?.displayName ? (
+                <div className="app__upload">
+                  <ImageUpload username={user.displayName} />
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
+          )}
+        </Popup>
         <img
           className="app__headerImage"
           src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
@@ -192,29 +208,7 @@ function App() {
             ))}
           </FlipMove>
         </div>
-        <div className="app__postsRight">
-          <InstagramEmbed
-            url="https://www.instagram.com/p/B_uf9dmAGPw/"
-            maxWidth={320}
-            hideCaption={false}
-            containerTagName="div"
-            protocol=""
-            injectScript
-            onLoading={() => {}}
-            onSuccess={() => {}}
-            onAfterRender={() => {}}
-            onFailure={() => {}}
-          />
-        </div>
       </div>
-
-      {user?.displayName ? (
-        <div className="app__upload">
-          <ImageUpload username={user.displayName} />
-        </div>
-      ) : (
-        ""
-      )}
     </div>
   );
 }
