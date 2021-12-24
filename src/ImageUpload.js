@@ -2,35 +2,14 @@ import React, { useState } from "react";
 import firebase from "firebase";
 import { storage, db } from "./firebase";
 import "./ImageUpload.css";
-import { Input } from "@material-ui/core";
+import { Input, Button } from "@material-ui/core";
 
-import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 140,
-  },
-});
-//upload pic
 const ImageUpload = ({ username }) => {
   const [image, setImage] = useState(null);
   const [url, setUrl] = useState("");
   const [progress, setProgress] = useState(0);
   const [caption, setCaption] = useState("");
-  //using styles components
-  const classes = useStyles();
 
-  //handling input of img extension
   const handleChange = (e) => {
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
@@ -81,18 +60,14 @@ const ImageUpload = ({ username }) => {
     <div className="imageupload">
       <progress className="imageupload__progress" value={progress} max="100" />
       <Input
-        placeholder="Enter your title from here"
+        placeholder="Enter a caption"
         value={caption}
         onChange={(e) => setCaption(e.target.value)}
       />
       <div>
         <input type="file" onChange={handleChange} />
-        <Button
-          className="imageupload__button"
-          variant="contained"
-          onClick={handleUpload}
-        >
-          Upload From here
+        <Button className="imageupload__button" onClick={handleUpload}>
+          Upload
         </Button>
       </div>
 

@@ -29,7 +29,8 @@
 .app__upload {
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: 20%;
+  height: 48em;
   background-color: white;
   border-top: 1px solid lightgray;
   text-align: center;
