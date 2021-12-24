@@ -156,7 +156,13 @@ function App() {
       </Modal>
       <div className="app__header">
         <Popup
-          trigger={<Button className="bn632-hover bn21">Add Post</Button>}
+          trigger={
+            user?.displayName ? (
+              <Button className="bn632-hover bn21">Add Post</Button>
+            ) : (
+              ""
+            )
+          }
           position="top left"
         >
           {() => (
