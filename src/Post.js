@@ -21,7 +21,7 @@ const Post = forwardRef(
             setComments(snapshot.docs.map((doc) => doc.data()));
           });
       }
-
+      //invoke function
       return () => {
         unsubscribe();
       };
