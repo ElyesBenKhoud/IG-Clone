@@ -1,9 +1,10 @@
 .post {
   border: 1px solid lightgray;
-  width: fit-content;
+  /* width: fit-content; */
   margin-bottom: 45px;
   background-color: #ffffff;
-  max-width: 500px;
+  /* max-width: 500px; */
+  width: 100%;
 }
 
 .post__image {
