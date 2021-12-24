@@ -4,12 +4,14 @@ import { storage, db } from "./firebase";
 import "./ImageUpload.css";
 import { Input, Button } from "@material-ui/core";
 
+//upload pic
 const ImageUpload = ({ username }) => {
   const [image, setImage] = useState(null);
   const [url, setUrl] = useState("");
   const [progress, setProgress] = useState(0);
   const [caption, setCaption] = useState("");
 
+  //handling input of img extension
   const handleChange = (e) => {
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
