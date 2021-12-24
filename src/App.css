@@ -71,11 +71,11 @@
 
 .app__posts {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 10px 30px;
 }
 
-/* .app__postsRight {
+.app__postsRight {
   margin-left: 10px;
-} */
+}

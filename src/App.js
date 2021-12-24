@@ -192,8 +192,7 @@ function App() {
             ))}
           </FlipMove>
         </div>
-
-        {/* <div className="app__postsRight">
+        <div className="app__postsRight">
           <InstagramEmbed
             url="https://www.instagram.com/p/B_uf9dmAGPw/"
             maxWidth={320}
@@ -206,7 +205,7 @@ function App() {
             onAfterRender={() => {}}
             onFailure={() => {}}
           />
-        </div> */}
+        </div>
       </div>
 
       {user?.displayName ? (
