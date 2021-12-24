@@ -3,8 +3,11 @@ import firebase from "firebase";
 import { storage, db } from "./firebase";
 import "./ImageUpload.css";
 import { Input, Button } from "@material-ui/core";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ImageUpload = ({ username }) => {
+  const notify = () => toast("Progress uploading!");
   const [image, setImage] = useState(null);
   const [url, setUrl] = useState("");
   const [progress, setProgress] = useState(0);
@@ -66,12 +69,19 @@ const ImageUpload = ({ username }) => {
       />
       <div>
         <input type="file" onChange={handleChange} />
-        <Button className="imageupload__button" onClick={handleUpload}>
+        <Button
+          className="imageupload__button"
+          onClick={() => {
+            handleUpload();
+            notify();
+          }}
+        >
           Upload
         </Button>
       </div>
 
       <br />
+      <ToastContainer />
     </div>
   );
 };
