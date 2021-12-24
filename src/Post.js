@@ -9,6 +9,7 @@ const Post = forwardRef(
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState("");
 
+    //map through the doc
     useEffect(() => {
       let unsubscribe;
       if (postId) {
