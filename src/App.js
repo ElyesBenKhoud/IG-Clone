@@ -178,7 +178,9 @@ function App() {
         />
         {user?.displayName ? (
           <div className="app__headerRight">
-            <Button onClick={() => auth.signOut()}>Logout</Button>
+            <Button className="bn632-hover bn21" onClick={() => auth.signOut()}>
+              Logout
+            </Button>
             <Avatar
               className="app__headerAvatar"
               alt={user.displayName}
@@ -187,8 +189,18 @@ function App() {
           </div>
         ) : (
           <form className="app__loginHome">
-            <Button onClick={() => setOpen(true)}>Login</Button>
-            <Button onClick={() => setRegisterOpen(true)}>Sign Up</Button>
+            <Button
+              className="bn63212-hover bn18"
+              onClick={() => setOpen(true)}
+            >
+              Login
+            </Button>
+            <Button
+              className="bn63212-hover bn18"
+              onClick={() => setRegisterOpen(true)}
+            >
+              Sign Up
+            </Button>
           </form>
         )}
       </div>
